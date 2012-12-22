@@ -1,0 +1,9 @@
+
+Source code: CoinProblem.java
+
+Build and run: Used NetBeans to build and run the application
+
+Test Run1: CoinProblem Quarter,4,Dime,10,Nickel,20,Penny,100
+Test Run2: CoinProblem Coin,1.5,Arrowhead,3,Button,150
+
+
