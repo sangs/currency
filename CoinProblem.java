@@ -58,11 +58,20 @@ public class CoinProblem {
     dvalueName = new HashMap<Integer, String>();
     dvalueCount = new HashMap<Integer, Float>();
 
+    if(inputList.length%2 != 0) {
+      System.out.println(USAGE_MESSAGE);
+      System.exit(1);
+    }
+
     //Save the inputs for processing, find the targetAmount to sum to
     int newMax = 0;
     for(int ci = 1, ix = 0; ci < inputList.length && ix < len; ci += 2, ix++) {
       names[ix] = inputList[ci-1];
       counts[ix] = Float.parseFloat(inputList[ci]);
+      if(counts[ix] <= 0) {
+        System.out.println(USAGE_MESSAGE);
+        System.exit(1);
+      }
       newMax = Math.round(counts[ix]);
       targetAmount = (newMax > targetAmount) ? newMax : targetAmount;
     }
@@ -195,7 +204,7 @@ public class CoinProblem {
   }
 
   public static void main(String[] args) {
-    if(args.length  < 1) {
+    if(args.length  < 1)  {
       System.out.println(USAGE_MESSAGE);
       return;
     }
